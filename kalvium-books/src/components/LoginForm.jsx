@@ -2,7 +2,6 @@ import { useFormik } from "formik";
 import { connect } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
-
 const initialValues = {
   loginEmail: "",
   loginPassword: "",
@@ -15,13 +14,14 @@ const mapStatetoProps = (state) => {
 };
 
 function LoginForm(props) {
-
-    const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const formik = useFormik({
     initialValues,
     onSubmit: (values) => {
       let errors = {};
+
+      //Validate with info from sign-up page
 
       if (values.loginEmail !== props.userDetails.email) {
         errors.loginEmail = "Email ID not found";
@@ -36,8 +36,9 @@ function LoginForm(props) {
         return;
       }
 
-      navigate("/")
+      //redirect to home after log in
 
+      navigate("/");
     },
   });
 

@@ -9,9 +9,19 @@ body{
   background-color: #f1f1f1;
 }
 
+/* Navbar */
+
 a {
   text-decoration: none;
   color: black;
+}
+
+#navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px;
+  background-color: white;
 }
 
 #logo-container{
@@ -27,6 +37,18 @@ a {
   height: 30px;
 }
 
+#search-bar {
+  width: 600px;
+  padding: 10px;
+  padding-left: 40px;
+  border-radius: 10px;
+  border: 1px solid lightgray;
+  box-shadow: 0.5px 0.5px 2px 0.5px lightgray ;
+  margin: 0px 10px;
+  outline: none;
+  background: transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'%3E%3C/path%3E%3C/svg%3E") no-repeat 13px;
+}
+
 #register{
   background-color: red;
   color: white;
@@ -39,6 +61,44 @@ a {
 #register:hover {
   background-color: black;
 }
+
+/* User Account */
+
+#user {
+  background-color: red;
+  padding: 10px 15px;
+  border-radius: 50%;
+  color: white;
+  cursor: pointer;
+}
+
+#user-details {
+  position: absolute;
+  right: 30px;
+  top: 80px;
+  border: 1px solid lightgray;
+  padding: 20px;
+  text-align: center;
+  min-width: 250px;
+  background-color: white;
+  border-radius: 10px;
+}
+
+#log-out {
+  font-size: 0.8rem;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 10px;
+  border: none;
+  background-color: red;
+  color: white;
+}
+
+.display {
+  display: none;
+}
+
+/* Results */
 
 #book-container {
   display: grid;
@@ -82,64 +142,12 @@ h4 {
   width: 800px;
 }
 
-#navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 30px;
-  background-color: white;
-}
-
-#search-bar {
-  width: 600px;
-  padding: 10px;
-  padding-left: 40px;
-  border-radius: 10px;
-  border: 1px solid lightgray;
-  box-shadow: 0.5px 0.5px 2px 0.5px lightgray ;
-  margin: 0px 10px;
-  outline: none;
-  background: transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'%3E%3C/path%3E%3C/svg%3E") no-repeat 13px;
-}
-
 button {
   padding: 10px 20px;
   cursor: pointer;
 }
 
-#user {
-  background-color: red;
-  padding: 10px 15px;
-  border-radius: 50%;
-  color: white;
-  cursor: pointer;
-}
-
-#user-details {
-  position: absolute;
-  right: 30px;
-  top: 80px;
-  border: 1px solid lightgray;
-  padding: 20px;
-  text-align: center;
-  min-width: 250px;
-  background-color: white;
-  border-radius: 10px;
-}
-
-#log-out {
-  font-size: 0.8rem;
-  padding: 10px;
-  margin: 10px;
-  border-radius: 10px;
-  border: none;
-  background-color: red;
-  color: white;
-}
-
-.display {
-  display: none;
-}
+/* Registration form */
 
 #form-container {
   display: flex;
@@ -168,16 +176,19 @@ button {
   width: 100%;
   color: green;
   padding: 10px;
-  font-size: 2rem;
+  font-size: 1.5rem;
   margin-bottom: 10px;
   text-align: center;
-  font-style: italic;
+  border-radius: 10px;
+  background-color: #deefd8;
+  border: 1px solid green;
 }
-
 
 #form-container h1 {
   padding: 10px;
 }
+
+/* Login form */
 
 #login-form-container {
   display: flex;
@@ -258,6 +269,7 @@ input:focus {
   100% {transform: rotate(360deg);}
 }
 
+/* Footer */
 
 footer {
   display: flex;

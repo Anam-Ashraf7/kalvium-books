@@ -16,10 +16,11 @@ function App() {
     maxResults: "20",
   })
 
+  //To show books at start
+
   useEffect(()=> {
     getData()
   },[])
-  
 
   const [searchResults,setSearchResults] = useState([])
   
@@ -27,6 +28,8 @@ function App() {
     setSearchInput(e.target.value)
     setSearchData({...searchData,query:e.target.value})
   }
+
+  //Initiate search
 
   const handleSearch = (event) => {
     if(event.key === "Enter") {
@@ -47,7 +50,6 @@ function App() {
         console.log('No results found');
       } else {
         setSearchResults(res.data.books);
-        console.log(res.data);
       }})
     .catch(err => {
       console.log(err)

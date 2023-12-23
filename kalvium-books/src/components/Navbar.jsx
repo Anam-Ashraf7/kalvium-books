@@ -32,8 +32,6 @@ function Navbar(props) {
 
     const logoutRef = useRef()
 
-    console.log(props.userDetails)
-
     const showLogout = () => {
         setToggle(!toggle)
         if(toggle){
