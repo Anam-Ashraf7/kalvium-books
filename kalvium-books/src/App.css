@@ -44,8 +44,8 @@ a {
   display: grid;
   padding: 100px;
   justify-content: center;
-  grid-template-columns: repeat(6,1fr);
-  gap: 30px;
+  grid-template-columns: repeat(5,1fr);
+  gap: 50px;
 }
 
 #book-container img {
@@ -67,6 +67,9 @@ a {
 
 h4 {
   padding-top: 10px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  max-width: 180px;
 }
 
 #search-result {
@@ -101,6 +104,41 @@ h4 {
 
 button {
   padding: 10px 20px;
+  cursor: pointer;
+}
+
+#user {
+  background-color: red;
+  padding: 10px 15px;
+  border-radius: 50%;
+  color: white;
+  cursor: pointer;
+}
+
+#user-details {
+  position: absolute;
+  right: 30px;
+  top: 80px;
+  border: 1px solid lightgray;
+  padding: 20px;
+  text-align: center;
+  min-width: 250px;
+  background-color: white;
+  border-radius: 10px;
+}
+
+#log-out {
+  font-size: 0.8rem;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 10px;
+  border: none;
+  background-color: red;
+  color: white;
+}
+
+.display {
+  display: none;
 }
 
 #form-container {
@@ -117,13 +155,23 @@ button {
   justify-content:center ;
   align-items: center;
   text-align: left;
-  border: 1px solid black;
+  border: 2px solid black;
   box-shadow: 2px 2px 1px 3px solid black;
   border-radius: 10px;
   width: 35% ;
-  padding: 20px;
+  padding: 30px;
   background-color: white;
   margin-top: 10px;
+}
+
+#success {
+  width: 100%;
+  color: green;
+  padding: 10px;
+  font-size: 2rem;
+  margin-bottom: 10px;
+  text-align: center;
+  font-style: italic;
 }
 
 
@@ -131,10 +179,33 @@ button {
   padding: 10px;
 }
 
+#login-form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+}
+
+#login-form {
+  width: 25vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid black;
+  padding: 50px 0px;
+  background-color: white;
+  border-radius: 10px;
+}
+
+#login-form-container h1 {
+  padding: 20px;
+}
+
 .input-container {
   display: flex;
   flex-direction: column;
-  width: 70%;
+  width: 80%;
   padding: 8px;
 }
 
@@ -161,9 +232,14 @@ input:focus {
   font-size: 0.9rem;
 }
 
-#sign-up {
+#sign-up,#log-in {
   margin-top: 20px;
   width: 25%;
+  background-color: red;
+  color: white;
+  border-radius: 10px;
+  border: none;
+  font-size: 1rem;
 }
 
 .loader {
@@ -173,8 +249,8 @@ input:focus {
   border-top: 12px solid red;
   border-radius: 50%;
   animation: spin 1s linear infinite;
-  margin: 25% 0%;
-  margin-left: 45%;
+  margin: 320px 0px;
+  margin-left: 700px;
 }
 
 @keyframes spin {
@@ -202,7 +278,7 @@ footer p {
 }
 
 footer img {
-  height: 50px;
+  height: 30px;
 }
 
 

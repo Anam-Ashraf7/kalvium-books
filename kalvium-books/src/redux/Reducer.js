@@ -1,5 +1,5 @@
 
-import { RegisterUser } from './Action'
+import { REGISTER_USER } from "./RegisterUser"
 
 
 const initialState = {
@@ -10,8 +10,8 @@ const initialState = {
 export const reducer = (state=initialState,action) => {
   
   switch(action.type) {
-    
-    case RegisterUser: {
+
+    case REGISTER_USER: {
       return {...state,registrationData:action.payload}
     }
 

@@ -1,5 +1,9 @@
 
 import { useFormik } from "formik";
+import {RegisterUser} from "../redux/Action"
+import { connect } from "react-redux";
+import { useState } from "react";
+import { useNavigate } from 'react-router-dom';
 
 const initialValues = {
   name: "",
@@ -7,10 +11,6 @@ const initialValues = {
   password: "",
   repeatPassword: "",
 };
-
-const onSubmit = () => {
-    
-}
 
 const validate = (values) => {
 
@@ -63,16 +63,37 @@ const validate = (values) => {
     return errors
 }
 
+const mapDispatchtoProps = dispatch => {
 
-function RegistrationForm() {
+    
+    return {
+        registerUser: (values) => {
+            dispatch(RegisterUser(values));
+        }
+    }
+
+}
+
+function RegistrationForm(props) {
+
+    const navigate = useNavigate();
+    
+    const [submit,setSubmit] = useState(false)
+
+    const onSubmit = (values,{resetForm}) => {
+        props.registerUser(values)
+        setSubmit(true)
+        resetForm()
+        setTimeout(()=> {
+            navigate("/login")
+        },2000)
+    }
 
   const formik = useFormik({
     initialValues,
     onSubmit,
     validate,
   });
-
-  console.log(formik.errors)
 
   return (
 
@@ -81,6 +102,8 @@ function RegistrationForm() {
       <h1>Create Account</h1>
       
       <form id="registration-form" onSubmit={formik.handleSubmit}>
+
+        {submit ? <h2 id="success">Registered Sucessfully</h2> : null }
 
         <div className="input-container">
 
@@ -156,4 +179,4 @@ function RegistrationForm() {
   );
 }
 
-export default RegistrationForm;
+export default connect(null,mapDispatchtoProps)(RegistrationForm);
