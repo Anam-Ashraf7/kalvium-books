@@ -260,7 +260,7 @@ input:focus {
   border-top: 12px solid red;
   border-radius: 50%;
   animation: spin 1s linear infinite;
-  margin: 320px 0px;
+  margin: 300px 0px;
   margin-left: 700px;
 }
 
